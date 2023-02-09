@@ -1,0 +1,13 @@
+include for-whom-data.pug
+
+section.for-whom#for-whom
+    .l-default 
+        h2.for-whom__title.title.title--h2.title--blue Кому подходит
+        .for-whom__subtitle этот фонд?
+        .swiper-container.for-whom__items
+            .swiper-wrapper
+                each for_whom_item in for_whom_items 
+                    .for-whom__item.swiper-slide
+                        .for-whom__item-img
+                            img(src="img/svg/for-whom/" + for_whom_item.img + ".svg", alt="")
+                        .for-whom__item-text= for_whom_item.text

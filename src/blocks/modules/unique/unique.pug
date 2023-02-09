@@ -1,0 +1,20 @@
+include unique-data.pug
+section.unique#unique
+    .l-tight 
+        h2.unique__title.title.title--h2.title--orange УНИКАЛЬНОСТЬ
+        .unique__subtitle фонда
+        .swiper-container.unique__items
+            .swiper-wrapper
+                each unique_item in unique_items
+                    .unique__item.swiper-slide
+                        .unique__item-img
+                            img(src="img/svg/unique/" + unique_item.img + ".svg", alt="")
+                        .unique__item-info
+                            .unique__item-title= unique_item.title
+                            .unique__item-text= unique_item.text
+        .swiper-container.unique__mobile
+            .swiper-wrapper
+                each unique_item in unique_items
+                    .swiper-slide
+                        .unique__mobile-title= unique_item.title
+                        .unique__mobile-text= unique_item.text

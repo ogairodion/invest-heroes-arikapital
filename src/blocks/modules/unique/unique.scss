@@ -1,0 +1,174 @@
+.unique {
+    padding: 160px 0;
+    @media screen and (max-width: 991px) {
+        padding: 80px 0 57px;
+    }
+    &__title, &__subtitle {
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: 43px;
+        line-height: 120%;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 78px;
+        @media screen and (max-width: 600px) {
+            font-size: 20px;
+            margin-bottom: 23px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        overflow: visible;
+
+        @media screen and (max-width: 600px) {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .swiper-wrapper {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 -15px -87px;
+
+        @media screen and (min-width: 600px) {
+            transform: translate(0) !important;
+        }
+
+        @media screen and (max-width: 600px) {
+            align-items: center;
+            flex-wrap: nowrap;
+            min-height: 169px;
+            margin: 0;
+        }
+    }
+
+    &__item {
+        @include tr('all');
+        display: flex;
+        align-items: flex-start;
+        margin: 0 15px 87px;
+        @media screen and (min-width: 600px) {
+            width: calc(50% - 30px) !important;
+        }
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 600px) {
+            filter: blur(4px);
+            margin: 0;
+        }
+
+
+        &-img {
+            @include tr('all');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 169px;
+            min-height: 169px;
+            border-radius: 100%;
+            box-shadow: inset 0px 17px 25px rgba(0, 0, 0, 0.06);
+            margin-right: 28px;
+            @media screen and (max-width: 600px) {
+                min-width: 137px;
+                min-height: 137px;
+                margin: 0 auto;
+            }
+    
+            img {
+                display: block;
+                width: auto;
+                height: auto;
+                @media screen and (max-width: 600px) {
+                    max-width: 95px;
+                }
+            }
+        }
+
+        &.swiper-slide-active {
+            @media screen and (max-width: 600px) {
+                filter: blur(0);
+                transform: scale(1.1);
+            }
+
+            .unique {
+                &__item {
+                    &-img {
+                        @media screen and (max-width: 600px) {
+                            min-width: 169px;
+                            min-height: 169px;
+                        }
+
+                        @media screen and (max-width: 399px) {
+                            min-width: 150px;
+                            min-height: 150px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-info {
+            padding: 20px 0;
+
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+
+        &-title {
+            @include tr('all');
+            font-size: 25px;
+            line-height: 120%;
+            font-weight: 900;
+            color: $blue;
+            margin-bottom: 9px;
+        }
+
+        &-text {
+            font-size: 18px;
+            line-height: 120%;
+        }
+
+        &:hover {
+            .unique {
+                &__item {
+                    &-img {
+                        transform: rotate(10deg);
+                    }
+
+                    &-title {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+
+    &__mobile {
+        display: none;
+        text-align: center;
+        @media screen and (max-width: 600px) {
+            display: block;
+        }
+        &-title {
+            font-size: 20px;
+            line-height: 120%;
+            font-weight: 900;
+            color: $blue;
+            margin-bottom: 14px;
+        }
+
+        &-text {
+            font-size: 15px;
+            line-height: 120%;
+        }
+    }
+}

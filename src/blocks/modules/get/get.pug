@@ -1,0 +1,22 @@
+include get-data.pug
+section.get#gets
+    .get__back 
+        +webp(['back/2'], 'png')
+    .l-tight 
+        h2.get__title.title.title--h2 что получит
+        .get__subtitle участник фонда
+        .get__items.swiper-container    
+            .swiper-wrapper
+                each get_item in get_items
+                    .get__item.swiper-slide
+                        .get__item-img
+                            img(src="img/svg/get/" + get_item.img + ".svg" , alt="")
+                        .get__item-info
+                            .get__item-title!= get_item.title
+                            .get__item-text= get_item.text
+        .swiper-container.get__mobile
+            .swiper-wrapper
+                each get_item in get_items
+                    .swiper-slide
+                        .get__mobile-title!= get_item.title
+                        .get__mobile-text= get_item.text

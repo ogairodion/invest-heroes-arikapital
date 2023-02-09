@@ -1,0 +1,25 @@
+include client-data.pug
+section.client#client
+    .client__back 
+        +webp(['back/1'], 'png')
+    .l-tight
+        h2.client__title.title.title--h2.title--orange КАК СТАТЬ КЛИЕНТОМ ФОНДА?
+        .client__subtitle ТРИ ПРОСТЫХ ШАГА
+        .swiper-container.client__items
+            .swiper-wrapper
+                each client_item in client_items
+                    .client__item.swiper-slide
+                        .client__item-img
+                            img(src="img/svg/client/" + client_item.img + ".svg" , alt="")
+                        .client__item-info
+                            .client__item-title= client_item.title
+                            .client__item-text= client_item.text
+        .swiper-container.client__mobile
+            .swiper-wrapper
+                each client_item in client_items
+                    .swiper-slide
+                        .client__mobile-title= client_item.title
+                        .client__mobile-text= client_item.text
+        .swiper-pagination
+        a.client__btn.btn.btn--orange.scroll(href="#horizontal-form") Оставить заявку на консультацию
+

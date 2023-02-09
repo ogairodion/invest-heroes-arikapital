@@ -1,0 +1,83 @@
+.for-whom {
+    padding-top: 260px;
+    @media screen and (max-width: 991px) {
+        padding-top: 60px;
+    }
+    &__title, &__subtitle {
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: 43px;
+        line-height: 120%;
+        font-weight: 600;
+        color: $black;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+
+        @media screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        overflow: visible;
+    }
+
+    &__item {
+        width: calc(25% - 40px) !important;
+        @media screen and (max-width: 1499px) {
+            width: 339px !important;
+        }
+        @media screen and (max-width: 767px) {
+            width: 212px !important;
+        }
+        &:first-child, &:last-child {
+            transform: translateY(-100px);
+
+            @media screen and (max-width: 1499px) {
+                transform: translateY(0);
+            }
+        }
+
+        &-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 339px;
+            min-height: 339px;
+            border-radius: 100%;
+            box-shadow: inset 0px 17px 25px rgba(0, 0, 0, 0.06);
+            padding: 50px;
+            margin-bottom: 20px;
+            @media screen and (max-width: 767px) {
+                min-width: 187px;
+                width: 187px;
+                min-height: 187px;
+                height: 187px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+            img {
+                display: block;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        &-text {
+            max-width: 275px;
+            font-size: 20px;
+            line-height: 120%;
+            text-align: center;
+            margin: 0 auto;
+
+            @media screen and (max-width: 767px) {
+                max-width: 100%;
+                font-size: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+include faq-data.pug
+section.faq#faq
+    .l-tight 
+        h2.faq__title.title.title--h2 FAQ
+        .faq__subtitle Часто задаваемые вопросы
+        .faq__dropdowns
+            each dropdown in dropdowns
+                .faq__dropdown.dropdown
+                    .dropdown__top
+                        .dropdown__title= dropdown.title
+                        .dropdown__arrow
+                            img(src="img/svg/arrow-dropdown.svg", alt="")
+                    .dropdown__content
+                        .dropdown__text!= dropdown.text

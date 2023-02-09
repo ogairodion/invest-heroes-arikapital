@@ -1,0 +1,175 @@
+.get {
+    position: relative;
+    color: #fff;
+    background: $blue;
+    padding: 110px 0 138px; 
+    @media screen and (max-width: 600px) {
+        padding: 49px 0 55px;
+    }
+    &__subtitle {
+        font-size: 43px;
+        line-height: 120%;
+        text-transform: uppercase;
+        margin-bottom: 72px;
+        @media screen and (max-width: 991px) {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 23px;
+        }
+    }
+
+    &__title {
+        @media screen and (max-width: 991px) {
+            text-align: center;
+        }
+    }
+
+    &__items {
+        overflow: visible;
+    }
+
+    &__item {
+        @include tr('all');
+        display: flex;
+        align-items: center;
+        margin-bottom: 45px;
+        @media screen and (min-width: 600px) {
+            width: 100% !important;
+        }
+        @media screen and (max-width: 600px) {
+            filter: blur(4px);
+            margin: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-img {
+            @include tr('all');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 169px;
+            min-height: 169px;
+            border-radius: 100%;
+            background: #fff;
+            margin-right: 20px;
+
+            @media screen and (max-width: 600px) {
+                min-width: 137px;
+                min-height: 137px;
+                margin: 0 auto;
+            }
+
+            img {
+                display: block;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        &-title {
+            @include tr('all');
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        &-text {
+            font-size: 18px;
+            line-height: 120%;
+        }
+
+        &:hover {
+            .get {
+                &__item {
+                    &-img {
+                        transform: rotate(10deg);
+                    }
+                }
+            }
+        }
+
+        &.swiper-slide-active {
+            @media screen and (max-width: 600px) {
+                filter: blur(0);
+                transform: scale(1.1);
+            }
+
+            .unique {
+                &__item {
+                    &-img {
+                        @media screen and (max-width: 600px) {
+                            min-width: 169px;
+                            min-height: 169px;
+                        }
+
+                        @media screen and (max-width: 399px) {
+                            min-width: 150px;
+                            min-height: 150px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-info {
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+    }
+
+    &__back {
+        position: absolute;
+        top: -40%;
+        right: -30%;
+
+        @media screen and (max-width: 1799px) {
+            top: -20%;
+            right: -10%;
+            width: 600px;
+        }
+
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        display: none;
+        text-align: center;
+        @media screen and (max-width: 600px) {
+            display: block;
+        }
+        &-title {
+            font-size: 20px;
+            line-height: 120%;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        &-text {
+            font-size: 15px;
+            line-height: 120%;
+        }
+    }
+
+    .swiper-wrapper {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 -15px -87px;
+
+        @media screen and (min-width: 600px) {
+            transform: translate(0) !important;
+        }
+
+        @media screen and (max-width: 600px) {
+            align-items: center;
+            flex-wrap: nowrap;
+            min-height: 169px;
+            margin: 0;
+        }
+    }
+}
